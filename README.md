@@ -28,6 +28,6 @@ NutGUI设计的出发点是代码和资源分离<br>
 	9.关闭面板PanelMgr.Instance.ClosePanel("面板名字")
 ### PS：在example中已经使用的非常详细了，可以复制example中的脚本，在脚本上做些修改。或者可以直接修改示例，示例涵盖了大部分的游戏界面类型，FullPanel是覆盖全屏的，如一些设置之类的界面，WarningPanel是一种警告界面，他一旦弹出来就必须关闭或者点击确定才能继续与其他界面交互，MovablePanel是游戏中非全屏，可以活动的界面类型。例如，背包，角色信息，组队，帮派，聊天，等等。还有提示类的界面，例如，游戏中的到一个物品，会有一行红色的小消息提示。系统发给所有玩家的通知消息。
 
-NUtGUI  v1.0
-Author  Mongo
-E-mail  gdqxyq2@163.com
+NUtGUI  v1.0<br>
+Author  Mongo<br>
+E-mail  gdqxyq2@163.com<br>
