@@ -34,4 +34,4 @@ PS：在example中已经使用的非常详细了，可以复制example中的脚�
 
 NUtGUI  v1.0
 Author  Mongo
-E-mail   gdqxyq2@163.com
+E-mailgdqxyq2@163.com
