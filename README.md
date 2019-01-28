@@ -16,7 +16,7 @@ NutGUI设计的出发点是代码和资源分离<br>
 	   OnClosed(关闭后的处理，一些动画)
 	3.PanelManager是一个单例类，他存有场景画布的引用，已经打开的面板，每个面板层级的父物体，和打开面板关闭面板的方法
 	4.PanelLayer是枚举类，保存所有面板的层级，与UI_Root下的子物体名字对应
-	![Image text](https://github.com/cnyboy/NutGUI/blob/master/img-folder/ClassDiagram.PNG)
+	![Image](https://github.com/cnyboy/NutGUI/blob/master/img-folder/ClassDiagram.PNG)
 ## 如何使用？
 	1.创建Canvas，重命名为UI_Root
 	2.定义面板的层级，NutGUI/Core下的枚举类PanelLayer中定义，在UI_Root下创建对应的空UI物体，枚举类中的名字和物体名字保持一致
