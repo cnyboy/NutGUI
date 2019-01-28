@@ -12,7 +12,7 @@ public class TipsPanelDelaySestroy : MonoBehaviour
     IEnumerator DelayDestory()
     {
         yield return new WaitForSeconds(2.0f);
-        PanelMgr.Instance.ClosePanel("TipsPanel");
+        PanelManager.Instance.ClosePanel("TipsPanel");
     }
 
 }

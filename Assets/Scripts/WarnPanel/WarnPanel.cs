@@ -14,15 +14,30 @@ public class WarnPanel : PanelBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        panelLayer = PanelLayer.WarningPanel;
+        panelLayer = PanelLayer.TOP;
         panelPrefabPath = "WarnPanel";
         arg = (string)args[0];
 
     }
 
+    public override void OnClosed()
+    {
+        //throw new NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new NotImplementedException();
+    }
+
+    public override void OnOpened()
+    {
+        //throw new NotImplementedException();
+    }
+
     public override void OnOpening()
     {
-        base.OnOpening();
+        //base.OnOpening();
         okButton = panelPrefab.transform.Find("OkButton").GetComponent<Button>();
         text= panelPrefab.transform.Find("Text").GetComponent<Text>();
         text.text = arg;
@@ -32,6 +47,6 @@ public class WarnPanel : PanelBase
 
     private void OkButtonOnClick()
     {
-        PanelMgr.Instance.ClosePanel("WarnPanel");
+        PanelManager.Instance.ClosePanel("WarnPanel");
     }
 }

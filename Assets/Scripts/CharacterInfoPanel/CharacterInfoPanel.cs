@@ -10,13 +10,28 @@ public class CharacterInfoPanel : PanelBase
     {
         base.Init(args);
         //设置面板所属的层级
-        panelLayer = PanelLayer.MovablePanel;
+        panelLayer = PanelLayer.MIDDLE;
         //设置面板模型的路径
         panelPrefabPath = "CharacterInfoPanel";
     }
+
+    public override void OnClosed()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnOpened()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     public override void OnOpening()
     {
-        base.OnOpening();
         //添加别的功能脚本，这些脚本不需要继承PanelBase，一些在此脚本无法完成的功能可以写到别的脚本
         //添加UI拖拽功能脚本
         panelPrefab.AddComponent<UIPanelDrag>();
@@ -30,7 +45,7 @@ public class CharacterInfoPanel : PanelBase
     //监听回调
     private void CloseButtonOnClick()
     {
-        PanelMgr.Instance.ClosePanel("CharacterInfoPanel");
+        PanelManager.Instance.ClosePanel("CharacterInfoPanel");
     }
 
 

@@ -6,16 +6,16 @@ namespace NutGUI
     /// <summary>
     /// 面板的管理类
     /// </summary>
-    public class PanelMgr : MonoBehaviour
+    public class PanelManager : MonoBehaviour
     {
-        private static PanelMgr _instance;
-        public static PanelMgr Instance
+        private static PanelManager _instance;
+        public static PanelManager Instance
         {
             get
             {
                 if (_instance==null)
                 {
-                    _instance = new PanelMgr();
+                    _instance = new PanelManager();
                 }
                 return _instance;
             }

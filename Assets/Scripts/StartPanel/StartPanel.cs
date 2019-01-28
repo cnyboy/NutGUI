@@ -16,13 +16,13 @@ public class StartPanel : PanelBase
     {
         base.Init(args);
         //设置面板模型的路径
-        panelLayer = PanelLayer.MovablePanel;
+        panelLayer = PanelLayer.MIDDLE;
         //设置面板所属的层级
         panelPrefabPath = "StartPanel";
     }
     public override void OnOpening()
     {
-        base.OnOpening();
+        //base.OnOpening();
         //找到对应的引用
         closeButton = panelPrefab.transform.Find("CloseButton").GetComponent<Button>();
         getItemButton = panelPrefab.transform.Find("GetItemButton").GetComponent<Button>();
@@ -43,27 +43,27 @@ public class StartPanel : PanelBase
     //监听回调
     private void ShoppingButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<WarnPanel>("","Warning:You dont have enough money!");
+        PanelManager.Instance.OpenPanel<WarnPanel>("","Warning:You dont have enough money!");
     }
 
     private void OpenChatButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<ChatPanel>("");
+        PanelManager.Instance.OpenPanel<ChatPanel>("");
     }
 
     private void OpenKnapsackButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<KnapsackPanel>("");
+        PanelManager.Instance.OpenPanel<KnapsackPanel>("");
     }
 
     private void OpenCharInfoButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<CharacterInfoPanel>("");
+        PanelManager.Instance.OpenPanel<CharacterInfoPanel>("");
     }
 
     private void GetItemButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<TipsPanel>("","Tips:GetItem,666!666!");
+        PanelManager.Instance.OpenPanel<TipsPanel>("","Tips:GetItem,666!666!");
     }
 
     private void CloseButtonOnClick()
@@ -77,14 +77,27 @@ public class StartPanel : PanelBase
         //        PanelMgr.Instance.ClosePanel(item.Key.ToString());
         //    }
         //}
-        PanelMgr.Instance.ClosePanel("TipsPanel");
-        PanelMgr.Instance.ClosePanel("ChatPanel");
-        PanelMgr.Instance.ClosePanel("CharacterInfoPanel");
-        PanelMgr.Instance.ClosePanel("KnapsackPanel");
+        PanelManager.Instance.ClosePanel("TipsPanel");
+        PanelManager.Instance.ClosePanel("ChatPanel");
+        PanelManager.Instance.ClosePanel("CharacterInfoPanel");
+        PanelManager.Instance.ClosePanel("KnapsackPanel");
 
-        PanelMgr.Instance.OpenPanel<MenuPanel>("");
-        PanelMgr.Instance.ClosePanel("StartPanel");
+        PanelManager.Instance.OpenPanel<MenuPanel>("");
+        PanelManager.Instance.ClosePanel("StartPanel");
     }
 
+    public override void OnOpened()
+    {
+        //throw new System.NotImplementedException();
+    }
 
+    public override void OnClosing()
+    {
+       // throw new System.NotImplementedException();
+    }
+
+    public override void OnClosed()
+    {
+       //throw new System.NotImplementedException();
+    }
 }

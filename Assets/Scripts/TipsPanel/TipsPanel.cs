@@ -9,13 +9,29 @@ public class TipsPanel : PanelBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        panelLayer = PanelLayer.MovablePanel;
+        panelLayer = PanelLayer.MIDDLE;
         panelPrefabPath = "TipsPanel";
         arg = (string)args[0];
     }
+
+    public override void OnClosed()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnOpened()
+    {
+       // throw new System.NotImplementedException();
+    }
+
     public override void OnOpening()
     {
-        base.OnOpening();
+        //base.OnOpening();
         panelPrefab.AddComponent<UIPanelDrag>();
         panelPrefab.AddComponent<TipsPanelDelaySestroy>();
         panelPrefab.AddComponent<MovablePanelLayerControl>();

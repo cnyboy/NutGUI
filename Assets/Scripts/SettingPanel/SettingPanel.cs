@@ -9,12 +9,28 @@ public class SettingPanel : PanelBase
     public override void Init(params object[] args)
     {
         base.Init(args);
-        panelLayer = PanelLayer.FullPanel;
+        panelLayer = PanelLayer.BOTTOM;
         panelPrefabPath = "SettingPanel";
     }
+
+    public override void OnClosed()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnOpened()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     public override void OnOpening()
     {
-        base.OnOpening();
+        //base.OnOpening();
         saveButton = panelPrefab.transform.Find("SaveButton").GetComponent<Button>();
         backButton = panelPrefab.transform.Find("BackButton").GetComponent<Button>();
 
@@ -24,15 +40,15 @@ public class SettingPanel : PanelBase
 
     private void BackButtonOnClick()
     {
-        PanelMgr.Instance.ClosePanel("SettingPanel");
-        PanelMgr.Instance.OpenPanel<MenuPanel>("");
+        PanelManager.Instance.ClosePanel("SettingPanel");
+        PanelManager.Instance.OpenPanel<MenuPanel>("");
     }
 
     private void SaveButtonOnClick()
     {
-        PanelMgr.Instance.ClosePanel("SettingPanel");
-        PanelMgr.Instance.OpenPanel<MenuPanel>("");
-        PanelMgr.Instance.OpenPanel<TipsPanel>("","Tips:Save is OK!!!");
+        PanelManager.Instance.ClosePanel("SettingPanel");
+        PanelManager.Instance.OpenPanel<MenuPanel>("");
+        PanelManager.Instance.OpenPanel<TipsPanel>("","Tips:Save is OK!!!");
     }
 
 }

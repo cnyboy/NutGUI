@@ -13,14 +13,14 @@ public class MenuPanel : PanelBase
     {
         base.Init(args);
         //设置面板所属的层级
-        panelLayer = PanelLayer.FullPanel;
+        panelLayer = PanelLayer.BOTTOM;
         //设置面板模型的路径
         panelPrefabPath = "MenuPanel";
     }
     //覆写OnOpening方法，做打开面板前的处理
     public override void OnOpening()
     {
-        base.OnOpening();
+        //base.OnOpening();
         //找到对应的引用
         startButton = panelPrefab.transform.Find("StartButton").GetComponent<Button>();
         settingButton = panelPrefab.transform.Find("SettingButton").GetComponent<Button>();
@@ -34,13 +34,28 @@ public class MenuPanel : PanelBase
     //监听回调
     private void StartButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<StartPanel>("");
-        PanelMgr.Instance.ClosePanel("MenuPanel");
+        PanelManager.Instance.OpenPanel<StartPanel>("");
+        PanelManager.Instance.ClosePanel("MenuPanel");
     }
 
     private void SettingButtonOnClick()
     {
-        PanelMgr.Instance.OpenPanel<SettingPanel>("");
-        PanelMgr.Instance.ClosePanel("MenuPanel");
+        PanelManager.Instance.OpenPanel<SettingPanel>("");
+        PanelManager.Instance.ClosePanel("MenuPanel");
+    }
+
+    public override void OnOpened()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosed()
+    {
+        //throw new System.NotImplementedException();
     }
 }

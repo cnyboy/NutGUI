@@ -1,28 +1,46 @@
-﻿using NutGUI;
+﻿using System;
+using NutGUI;
 using UnityEngine.UI;
 
 public class KnapsackPanel : PanelBase
 {
     private Button closeButton;
-
     public override void Init(params object[] args)
     {
         base.Init(args);
-        panelLayer = PanelLayer.MovablePanel;
+        panelLayer = PanelLayer.MIDDLE;
         panelPrefabPath = "KnapsackPanel";
     }
+
+
+    public override void OnClosed()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnClosing()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void OnOpened()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     public override void OnOpening()
     {
-        base.OnOpening();
+        // throw new System.NotImplementedException();
         panelPrefab.AddComponent<UIPanelDrag>();
         panelPrefab.AddComponent<MovablePanelLayerControl>();
         closeButton = panelPrefab.transform.Find("CloseButton").GetComponent<Button>();
         closeButton.onClick.AddListener(CloseButtonOnClick);
+
     }
+
     private void CloseButtonOnClick()
     {
-        PanelMgr.Instance.ClosePanel("KnapsackPanel");
+        //throw new NotImplementedException();
+        PanelManager.Instance.ClosePanel("KnapsackPanel");
     }
-
-
 }

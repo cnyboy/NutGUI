@@ -7,7 +7,7 @@ public class UIControl : MonoBehaviour
 {
     private void Start()
     {
-        PanelMgr.Instance.OpenPanel<MenuPanel>("");
+        PanelManager.Instance.OpenPanel<MenuPanel>("");
     }
 
 }
